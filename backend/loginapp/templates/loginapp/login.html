@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li.success {
+    color: green;
+  }
+  li.error {
+    color: red;
+  }
+</style>
+</head>
+<body>
+    {% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {{ message }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+    <h1>Iniciar sesión</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <label for="username">Usuario:</label><br>
+        <input type="text" name="username" id="username" required><br><br>
+
+        <label for="password">Contraseña:</label><br>
+        <input type="password" name="password" id="password" required><br><br>
+
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+</html>

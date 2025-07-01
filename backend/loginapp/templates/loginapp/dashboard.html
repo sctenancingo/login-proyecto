@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Bienvenido al Dashboard</h1>
+    <p>¡Has iniciado sesión correctamente!</p>
+
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+    </form>
+</body>
+</html>
